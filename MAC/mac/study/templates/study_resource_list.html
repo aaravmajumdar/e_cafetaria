@@ -1,0 +1,17 @@
+{%extends 'base.html' %}
+{% block title %} Study Resources {% endblock title %}
+{% block blogactive %} active {% endblock blogactive %} 
+
+{% block body %}
+<form action='/summarize' method='get'>
+<div class = 'container mx-15 my-5' >
+    {% for resource in allPosts %}
+    <div class="card my-2" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">{{ resource.course }}</h5>
+          <a href="{{ resource.file.url }}" class="btn btn-primary">Download</a>
+        </div>
+      </div>
+{% endfor %}   
+
+{%endblock%}

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %} Server Rooms {% endblock title %}
+{% block blogactive %} active {% endblock blogactive %}
+{% block body %}
+<div class="container my-3">
+    <h2> Join your desired server rooms</h2>
+    {% for post in allPosts %}
+    <div class="card my-2" style="width: 18rem;">
+       
+        <div class="card-body ">
+          <h5 class="card-title">{{post.name}}</h5>
+          <p class="card-text">{{post.desc}}</p>
+          <input type="hidden" name="postSno" value="{{post.sno}}">
+          <a href="{{post.slug}}" class="btn btn-primary">Go </a>
+        </div>
+      </div>
+{% endfor %}
+{% endblock body %}
